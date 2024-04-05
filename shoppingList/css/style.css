@@ -76,12 +76,10 @@ header {
 
 /**nav**/
 nav {
-    position: fixed;
-    
+    position: fixed;  
     margin-top: 15rem;
     background-color: white;
     display: flex;
-    
     margin-left: 2rem;
     border-radius: 3%;
     padding-top: 5rem;
@@ -116,9 +114,8 @@ a:hover {
 
 
 /**section**/
-h1 {
-    padding-top: 5rem;
-    
+section {
+    scroll-margin-top: 6rem;
 }
 
 main {
@@ -131,6 +128,8 @@ main {
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     grid-gap:2rem;
     justify-content: space-evenly;
+    margin-bottom: 5rem;
+    padding: 0px;
 }
 img {
     width: 100%;
@@ -148,6 +147,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));  
     grid-gap:2rem;
     justify-content: space-evenly;
+    margin-bottom: 5rem;
 }
 
 .pants_wrapper {
@@ -156,6 +156,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); 
     grid-gap:2rem;
     justify-content: space-evenly;
+    margin-bottom: 5rem;
 }
 
 .outer_wrapper {
