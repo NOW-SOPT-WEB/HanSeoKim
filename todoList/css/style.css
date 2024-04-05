@@ -1,7 +1,6 @@
+/*reset css*/
 @import "/todoList/css/reset.css";
 
-
-  
 
 body {
     background: linear-gradient(to top, pink, skyblue);
@@ -11,11 +10,7 @@ body {
     font-style: normal;
 }
 
-p {
- overflow: hidden;   
-}
-
-
+/*상단부*/
 header {
     display: flex;
     flex-direction: column;
@@ -25,6 +20,33 @@ header {
 
 }
 
+input {
+    width: 300px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    padding-left: 1rem;
+}
+
+
+.search_btn {
+    width: 60px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid gray;
+    color: white;
+    background-color: rgb(165, 165, 165);
+    font-size: larger;
+}
+
+
+h1 {
+    color: rgb(56, 80, 72);
+}
+
+
+
+/*메인 부분*/
 .wrapper {
     display: flex;
     justify-content: center;
@@ -44,16 +66,6 @@ li {
     animation: up-down 1.4s infinite ease-in-out alternate;
 }
 
-
-
-
-p {
-    margin: 1rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-   
-}
-
 .list_todo, .list_done {
     display: flex;
     flex-direction: column;
@@ -61,29 +73,7 @@ p {
     
 }
 
-
-input {
-    width: 300px;
-    height: 40px;
-    border-radius: 7px;
-    border: 1px solid gray;
-    padding-left: 1rem;
-}
-
-.search_btn {
-    width: 60px;
-    height: 40px;
-    border-radius: 7px;
-    border: 1px solid gray;
-    color: white;
-    background-color: rgb(165, 165, 165);
-    font-size: larger;
-}
-
-h1 {
-    color: rgb(56, 80, 72);
-}
-
+/*삭제버튼*/
 li button {
     display: flex;
     justify-content: center;
@@ -97,6 +87,16 @@ li button {
     height: 24px;
     text-align: center;
 }
+
+
+/*긴 문장 말 줄임*/
+p {
+    overflow: hidden;   
+    margin: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 @keyframes up-down{
     from{
