@@ -1,7 +1,3 @@
-/*reset css*/
-@import "/todoList/css/reset.css";
-
-
 body {
     background: linear-gradient(to top, pink, skyblue);
     height: 100vh;
@@ -66,7 +62,7 @@ li {
     animation: up-down 1.4s infinite ease-in-out alternate;
 }
 
-.list_todo, .list_done {
+.list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -74,13 +70,13 @@ li {
 }
 
 /*삭제버튼*/
-li button {
+.delete_btn {
     display: flex;
     justify-content: center;
     align-items: center;
     align-self: center;
     border-radius:100%;
-    border: solid 0px black;
+    border: 0px;
     color: white;
     background-color: rgb(141, 141, 141);
     width: 24px;

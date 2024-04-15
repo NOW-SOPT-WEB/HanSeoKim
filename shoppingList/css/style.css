@@ -1,5 +1,3 @@
-/*reset css*/
-@import "/shoppingList/css/reset.css";
 
 html,body {	margin: 0;	padding: 0;
         background-color: rgb(235, 235, 235);
@@ -13,16 +11,17 @@ html,body {	margin: 0;	padding: 0;
 header {
     display: flex;
     justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     position: fixed;
     width: 100%;
-    height: 10%;
+    height: 5rem;
     background-color: rgb(217, 217, 217);
-    z-index: 5;
+    z-index: 1;
 
 }
 
-#header_logo {
+.fa-bars, .fa-github {
     padding: 3rem;
     font-size: 40px;
 }
@@ -43,8 +42,8 @@ header {
 /**banner slide**/
 .slider {
     overflow: hidden;
-    width: 1100px;
-    height: 300px;
+    width: 67rem;
+    height: 20rem;
     box-sizing: border-box;
     align-self: flex-end;
     margin-top: 120px;
@@ -75,7 +74,7 @@ header {
 }
 
 /**nav**/
-nav {
+.nav_1 {
     position: fixed;  
     margin-top: 15rem;
     background-color: white;
@@ -84,26 +83,24 @@ nav {
     border-radius: 3%;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    
-
 }
 
 
-li {
+.nav_select {
     padding: 0.5rem;
     font-size: 20px;
     margin:0 3rem;
 }
 
 
-a {
+.nav_select a {
     text-decoration-line: none;
     text-decoration-color: none;
     color: black;
 }
 
 
-li:hover {
+.nav_select:hover {
     background-color: rgb(217, 217, 217);
     
 }
@@ -115,7 +112,7 @@ a:hover {
 
 
 /**section**/
-section {
+.sect {
     scroll-margin-top: 6rem;
 }
 
@@ -123,13 +120,17 @@ main {
     padding: 0rem 15rem;
 }
 
-.all {
+.wrapper{
     display: grid;
-    grid-template-rows:1fr 1fr;
     grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     grid-gap:2rem;
     justify-content: space-evenly;
     margin-bottom: 5rem;
+}
+
+
+.all_items {
+    grid-template-rows:1fr 1fr;   
     padding: 0px;
 }
 img {
@@ -142,41 +143,29 @@ p {
     margin: 0.5rem;
 }
 
-.top_wrapper {
-    display: grid;
+.top_items {
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));  
-    grid-gap:2rem;
-    justify-content: space-evenly;
+}
+
+.pants_items {
+    grid-template-rows: 1fr;
     margin-bottom: 5rem;
 }
 
-.pants_wrapper {
-    display: grid;
+.outer_items {
     grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); 
-    grid-gap:2rem;
-    justify-content: space-evenly;
-    margin-bottom: 5rem;
-}
-
-.outer_wrapper {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
-    grid-gap:2rem;
-    justify-content: space-evenly;
+    
 }
 
 
-.outer, .top, .pants {
+.items {
     padding: 1.5rem;
     background-color: white;
     border-radius: 3%;
     transition: all 0.5s;
 }
 
-.outer:hover, .top:hover, .pants:hover {
+.items:hover {
     
     animation: img_hover 1.5s infinite;
     
@@ -216,7 +205,7 @@ footer {
 
 
 @media screen and (max-width : 900px) { 
-    .all, .top_wrapper, .pants_wrapper, .outer_wrapper { 
+    .all_wrapper, .top_wrapper, .pants_wrapper, .outer_wrapper { 
         grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
         justify-content: center;
     } 
