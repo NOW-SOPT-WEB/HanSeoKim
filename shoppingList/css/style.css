@@ -118,7 +118,7 @@ a:hover {
 }
 
 .side_bar {
-    position: absolute;
+    position: fixed;
     right: 0rem;
     width: 15rem;
     height: 50rem;

@@ -29,8 +29,8 @@ function makeList(container, index) {
     item.innerHTML = `
         <img src="${SHOPPING_LIST[index].imgUrl}" alt="${SHOPPING_LIST[index].name}">
         <p><i class="fa-solid fa-heart"></i></p>
-        <p>${SHOPPING_LIST[index].name}</p>
-        <p>${SHOPPING_LIST[index].price}원</p>
+        <p class="itemName">${SHOPPING_LIST[index].name}</p>
+        <p class="itemPrice">${SHOPPING_LIST[index].price}원</p>
     `;
     container.appendChild(item);
 }
@@ -72,15 +72,3 @@ function navClick() {
     });
   }
 
-  //cart
-const eachItems = document.querySelector(".items");
-document.addEventListener("click",function(){
-    const result = confirm("장바구니에 담으시겠습니까?");
-    if (result) {
-        window.location.href = "cart.html";
-    } else {
-      
-    }
-
-})
-  
