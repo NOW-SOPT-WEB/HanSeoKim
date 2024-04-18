@@ -1,0 +1,73 @@
+export const SHOPPING_LIST = [
+    {
+      id: 1,
+      name: "블루조끼",
+      category: "outer",
+      price: 30000,
+      imgUrl: "/shoppingList/assests/outer1.jpg",
+    },
+    {
+      id: 2,
+      name: "블랙조끼",
+      category: "outer",
+      price: 30000,
+      imgUrl: "/shoppingList/assests/outer2.jpg",
+    },
+    {
+      id: 3,
+      name: "퍼플조끼",
+      category: "outer",
+      price: 30000,
+      imgUrl: "/shoppingList/assests/outer3.jpg",
+    },
+    {
+      id: 4,
+      name: "스키니진",
+      category: "pants",
+      price: 40000,
+      imgUrl: "/shoppingList/assests/pants1.jpg",
+    },
+    {
+      id: 5,
+      name: "무늬바지",
+      category: "pants",
+      price: 40000,
+      imgUrl: "/shoppingList/assests/pants2.jpg",
+    },
+    {
+      id: 6,
+      name: "조거팬츠",
+      category: "pants",
+      price: 40000,
+      imgUrl: "/shoppingList/assests/pants3.jpg",
+    },
+    {
+      id: 7,
+      name: "아이보리 면바지",
+      category: "pants",
+      price: 40000,
+      imgUrl: "/shoppingList/assests/pants4.jpg",
+    },
+    {
+      id: 8,
+      name: "흰 반팔 티",
+      category: "top",
+      price: 10000,
+      imgUrl: "/shoppingList/assests/top1.jpg",
+    },
+    {
+      id: 9,
+      name: "빨강 반팔 티",
+      category: "top",
+      price: 10000,
+      imgUrl: "/shoppingList/assests/top2.jpg",
+    },
+    {
+      id: 10,
+      name: "노란 반팔 티",
+      category: "top",
+      price: 10000,
+      imgUrl: "/shoppingList/assests/top3.jpg",
+    },
+    
+  ];
