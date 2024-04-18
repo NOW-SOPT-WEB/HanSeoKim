@@ -24,7 +24,7 @@ header {
 
 }
 
-.sideMenu_btn, .fa-github {
+.sideMenu_btn, .home_logo {
     padding: 3rem;
     font-size: 40px;
     cursor: pointer;
@@ -102,6 +102,130 @@ header {
     width: 10rem;
     height: 10rem;
     object-fit: cover;
+}
+
+/*modal*/
+.modal{
+    position: fixed;
+    background-color: white;
+    top: 9rem;
+    right: 19rem;
+    width: 60%;
+
+    border: 1px solid rgb(210, 205, 205);
+    border-radius: 10px;
+    max-height: 38rem;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.modal_items {
+    display: flex;
+    flex-direction: row;
+    width: 180px;
+}
+.modal_sect {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    width: 160px;
+
+}
+
+
+.modal_img > img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+}
+
+.modal_info {
+    text-align: center;
+    width: 200px;
+}
+
+.modal_info_sect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+    height: 60px;
+}
+
+
+
+/*버튼*/
+.purchase_btn, .goHome {
+    margin-top: 5rem;
+    margin-right: 2rem;
+    padding: 1rem 1rem;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(106, 106, 106);
+    cursor: pointer;
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    box-shadow: 3px 3px 3px 3px rgb(147, 147, 147);;
+}
+
+
+.purchase_btn:hover, .goHome:hover, .buy:hover {
+    background-color: rgb(187, 187, 187);
+    color: rgb(0, 0, 0);
+}
+
+
+.buy {
+    position: inherit;
+    top: 11rem;
+    right: 23rem;
+    padding: 0.5rem 1rem;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(161, 159, 159);
+    cursor: pointer;
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    box-shadow: 1px 1px 1px 1px rgb(163, 161, 161);;
+}
+
+.delete_btn {
+    padding: 1rem 1.2rem;
+    border: 0px;
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(106, 106, 106);
+    cursor: pointer;
+    font-family: "Gaegu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 12px;
+}
+
+.back_btn {
+    background: none;
+    border: 0px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2rem;
+    color : rgb(179, 179, 179);
+
+}
+
+.totalPrice {
+    padding: 1rem;
+    font-size: 20px;
 }
 
 

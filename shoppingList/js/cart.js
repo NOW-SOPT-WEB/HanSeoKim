@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const result = confirm("장바구니에 담으시겠습니까?");
                 if (result) {
                     const itemName = item.querySelector(".itemName").textContent; 
-                    const itemPrice = parseInt(item.querySelector(".itemPrice").textContent).toLocaleString(); 
+                    const itemPrice = parseInt(item.querySelector(".itemPrice").textContent); 
                     let itemCategory; 
                     let imgSrc;
                     SHOPPING_LIST.forEach((a, i) => {
@@ -57,15 +57,82 @@ function loadCart() {
         const cartItemElement = document.createElement("ul");
         cartItemElement.classList.add("list_contents");
         cartList.appendChild(cartItemElement);
+        const price = cartItem.item_price.toLocaleString();
         cartItemElement.innerHTML = `
             <li><input class="check" type="checkbox" value=""></li>
             <li><div class="image_name"><img src="${cartItem.item_img}"><p class="info">${cartItem.item_name}</p></div></li>
-            <li><p class="info">${cartItem.item_price} 원</p></li>
+            <li><p class="info">${price} 원</p></li>
             <li><p class="info">${cartItem.item_category}</p></li>
-            <li><button type="submit">삭제</button></li>
+            <li><button class=".delete_btn" type="submit">삭제</button></li>
         `;
     });
 }
+
+
+
+//modal화면 load
+
+function loadModal(){
+    const modal_items = document.querySelector(".modal_items");
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    let totalPrice = 0;
+    
+    cartItems.forEach(function(cartItem) {
+        const li = document.createElement("li");
+        const price = parseInt(cartItem.item_price);
+        const priceString = cartItem.item_price.toLocaleString();
+        modal_items.appendChild(li);
+        li.classList.add("modal_sect");
+        li.innerHTML=
+        `
+                    <img src="${cartItem.item_img}">
+                    <p class="modal_info">${cartItem.item_name} : ${priceString} 원</p>
+        `;
+        totalPrice += price; 
+    });
+    const totalPriceString = totalPrice.toLocaleString();
+    const price = document.createElement("div");
+    const modal = document.querySelector(".modal");
+    modal.appendChild(price);
+    price.innerHTML = 
+    `
+        <p class="totalPrice">총 금액 : ${totalPriceString} 원</p>
+    `;
+
+}
+
+
+
+//modal
+const buyBtn = document.querySelector(".purchase_btn");
+const modalBuy = document.querySelector(".buy");
+const modal = document.querySelector(".modal");
+buyBtn.addEventListener("click", function(){
+    modal.classList.remove("hidden");
+});
+function closeModal() {
+    modal.classList.add("hidden");
+}
+if (modal) {
+    loadModal();
+    const back = document.querySelector(".back_btn");
+    back.addEventListener("click",closeModal);
+    modalBuy.addEventListener("click", function(){
+        alert("구매 완료!");
+        closeModal();
+    })
+}
+
+
+
+//home으로 이동
+const homeBtn = document.querySelector(".goHome");
+function goHome() {
+  window.location.href = "index.html";
+}
+homeBtn.addEventListener("click", goHome);
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
