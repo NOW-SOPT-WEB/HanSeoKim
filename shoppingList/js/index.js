@@ -27,11 +27,21 @@ document.addEventListener('DOMContentLoaded',function(){
 const menu_btn = document.querySelector(".sideMenu_btn");
 const menu = document.querySelector(".side_bar");
 const back_btn = document.querySelector(".back_btn");
+let keyframes = [
+    {transform: "translate3d(100%, 0, 0)"},
+    {transform: "translateZ(0)"}
+  ];
+let options = {
+  	duration: 500,
+  	fill: "backwards"
+};
 
 document.addEventListener('DOMContentLoaded',function(){
     if (menu_btn){
         menu_btn.addEventListener("click",function(){
             menu.classList.remove("hidden");
+            menu.animate(keyframes, options);
+
         });
     }
 
@@ -39,7 +49,6 @@ document.addEventListener('DOMContentLoaded',function(){
         back_btn.addEventListener("click",function(){
             menu.classList.add("hidden");
         });
-        
     }
 });
 
@@ -64,13 +73,14 @@ document.addEventListener('DOMContentLoaded',function(){
     let i = 0;
     while (i<2){
         makeImg();
-        i = i + 1;
+        i += 1;
     }
 
     }
         
-        
 });
+
+
 
 
 
