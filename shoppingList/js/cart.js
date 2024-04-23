@@ -68,22 +68,6 @@ function loadCart() {
             <li><p class="info">${cartItem.item_category}</p></li>
             <li><button class=".delete_btn" type="submit">삭제</button></li>
         `;
-
-      // const checkbox = document.querySelectorAll(".check_each");
-      // console.log(checkbox);
-      // checkbox.forEach((i)=>{
-      //     i.addEventListener("click", (event)=>{
-      //         const is_checked = event.target.checked;
-      //         console.log("is_checked",is_checked);
-      //         if(is_checked){
-      //             const item = cartItems.find(elem => elem.item_name === cartItem.item_name);
-      //             buyList.push(item);
-      //             console.log('item:', item)
-
-      //         }
-      //     })
-      // })
-      // console.log("buyList :",buyList);
     })
     .join("");
   pushCart();
@@ -112,33 +96,6 @@ function pushCart() {
     })
   );
 }
-
-// cartItems.forEach((cartItem)=> {
-//     const cartItemElement = document.createElement("ul");
-//     cartItemElement.classList.add("list_contents");
-//     cartList.appendChild(cartItemElement);
-//     const price = cartItem.item_price.toLocaleString();
-//     cartItemElement.innerHTML = `
-//         <li><input class="check_each" type="checkbox" value=""></li>
-//         <li><div class="image_name"><img src="${cartItem.item_img}"><p class="info">${cartItem.item_name}</p></div></li>
-//         <li><p class="info">${price} 원</p></li>
-//         <li><p class="info">${cartItem.item_category}</p></li>
-//         <li><button class=".delete_btn" type="submit">삭제</button></li>
-//     `;
-//     const checkbox = document.querySelectorAll(".check_each");
-//     console.log(checkbox);
-//     checkbox.forEach((i)=>{
-//         i.addEventListener("change", (event)=>{
-//             const is_checked = event.target.checked;
-//             console.log(is_checked);
-//             if(is_checked){
-//                 const item = cartItems.find(elem => elem.item_name === cartItem.item_name);
-//                 buyList.push(item);
-//             }
-//         })
-//     })
-//     console.log("buyList :",buyList);
-// });
 
 //modal화면 load
 function loadModal() {
