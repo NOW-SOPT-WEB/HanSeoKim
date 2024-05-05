@@ -54,6 +54,7 @@ function App() {
   const [cardTwo, setcardTwo] = useState(null);
   const [matchCards, setmatchCards] = useState(0);
   const [showModal, setShowModal] = useState(false);
+  const [mode, setMode] = useState("easy");
 
   useEffect(() => {
     shuffleCards();
@@ -63,14 +64,18 @@ function App() {
   useEffect(() => {
     if (cardOne && cardTwo) {
       if (cardOne.src === cardTwo.src) {
+        //이전 상태의 카드 배열을 업데이트
         setCards((prevCards) =>
+          //각각의 카드를 순회하면서 일치하면 matched true 반환, (일치하는 쌍은 카드 계속 오픈)
           prevCards.map((card) =>
             card.src === cardOne.src ? { ...card, matched: true } : card
           )
         );
+        //일치하는 카드 쌍의 수를 업데이트
         setmatchCards((prev) => prev + 1);
         setTimeout(() => resetTurn(), 1000);
       } else {
+        //1초 뒤에 초기화
         setTimeout(() => resetTurn(), 1000);
       }
     }
@@ -78,18 +83,50 @@ function App() {
 
   //모달 보이기
   useEffect(() => {
-    if (matchCards === 5) {
-      setShowModal(true);
+    let numberOfPairs = 0;
+    if (mode === "easy") {
+      numberOfPairs = 5;
+    } else if (mode === "normal") {
+      numberOfPairs = 7;
+    } else if (mode === "hard") {
+      numberOfPairs = 9;
+    }
+    if (matchCards === numberOfPairs) {
+      setTimeout(() => setShowModal(true), 900);
     }
   }, [matchCards]);
 
+  //모드 설정
+  useEffect(() => {
+    let requiredMatches = 0;
+    if (mode === "easy") {
+      requiredMatches = 5;
+    } else if (mode === "normal") {
+      requiredMatches = 7;
+    } else if (mode === "hard") {
+      requiredMatches = 9;
+    }
+
+    if (matchCards === requiredMatches) {
+      setTimeout(() => setShowModal(true), 900);
+    }
+  }, [matchCards, mode]);
+
   //카드 섞기
   const shuffleCards = () => {
+    let numberOfPairs = 0;
+    if (mode === "easy") {
+      numberOfPairs = 5;
+    } else if (mode === "normal") {
+      numberOfPairs = 7;
+    } else if (mode === "hard") {
+      numberOfPairs = 9;
+    }
     const selectedCardImages = [...cardImages]
       .sort(() => 0.5 - Math.random())
-      .slice(0, 5);
+      .slice(0, numberOfPairs);
 
-    const shuffledCards = [...selectedCardImages, ...selectedCardImages]
+    const copyShuffledCards = [...selectedCardImages, ...selectedCardImages]
       .sort(() => Math.random() - 0.5)
       .map((card, index) => ({ ...card, id: index, flipped: false }));
 
@@ -97,9 +134,10 @@ function App() {
     setcardOne(null);
     setcardTwo(null);
     setmatchCards(0);
-    setCards(shuffledCards);
+    setCards(copyShuffledCards);
     setTurns(0);
     setShowModal(false);
+    // setMode("easy");
   };
 
   const resetTurn = () => {
@@ -112,6 +150,11 @@ function App() {
     cardOne ? setcardTwo(card) : setcardOne(card);
   };
 
+  const selectMode = (mode) => {
+    setMode(mode);
+    shuffleCards(); //모드가 변경되면 카드 셔플
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <LayoutWrapper>
@@ -122,7 +165,7 @@ function App() {
           </p>
           <ResetBtn shuffleCards={shuffleCards}></ResetBtn>
         </Header>
-        <SelectMode></SelectMode>
+        <SelectMode selectMode={selectMode}></SelectMode>
         <MainContents>
           {cards.map((card) => (
             <Card
