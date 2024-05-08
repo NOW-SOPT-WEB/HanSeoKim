@@ -133,7 +133,6 @@ function App() {
   const resetTurn = () => {
     setcardOne(null);
     setcardTwo(null);
-    setTurns((prevTurns) => prevTurns + 1);
   };
 
   const selectCards = (card) => {
