@@ -5,17 +5,10 @@ import theme from "./styles/theme";
 import ResetBtn from "./components/ResetButton";
 import Card from "./components/CardSection";
 import SelectMode from "./components/SelectMode";
+import Header from "./components/Header";
 const LayoutWrapper = styled.div`
   height: 100vh;
-  background-color: ${(props) => props.theme.colors.gray};
-`;
-
-const Header = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
-  background-color: ${(props) => props.theme.colors.gray};
+  background-color: ${({ theme }) => theme.colors.gray};
 `;
 
 const Modal = styled.div`
@@ -31,7 +24,7 @@ const Modal = styled.div`
 `;
 
 const ModalContent = styled.div`
-  background: ${(props) => props.theme.colors.white};
+  background: ${({ theme }) => theme.colors.white};
   padding: 20px;
   border-radius: 10px;
   text-align: center;
@@ -62,7 +55,7 @@ function App() {
 
   //선택한 카드가 일치하는지 확인
   useEffect(() => {
-    if (cardOne && cardTwo) {
+    if (cardTwo) {
       if (cardOne.src === cardTwo.src) {
         //이전 상태의 카드 배열을 업데이트
         setCards((prevCards) =>
@@ -73,11 +66,8 @@ function App() {
         );
         //일치하는 카드 쌍의 수를 업데이트
         setmatchCards((prev) => prev + 1);
-        setTimeout(() => resetTurn(), 1000);
-      } else {
-        //1초 뒤에 초기화
-        setTimeout(() => resetTurn(), 1000);
       }
+      setTimeout(() => resetTurn(), 1000);
     }
   }, [cardOne, cardTwo]);
 
@@ -158,13 +148,11 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <LayoutWrapper>
-        <Header>
-          <h1>🐥 Card Game 🐥</h1>
-          <p>
-            SCORE : {matchCards} / {cards.length / 2}
-          </p>
-          <ResetBtn shuffleCards={shuffleCards}></ResetBtn>
-        </Header>
+        <Header
+          matchCards={matchCards}
+          shuffleCards={shuffleCards}
+          cards={cards}
+        ></Header>
         <SelectMode selectMode={selectMode}></SelectMode>
         <MainContents>
           {cards.map((card) => (
