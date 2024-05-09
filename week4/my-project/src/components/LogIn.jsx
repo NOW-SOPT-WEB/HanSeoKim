@@ -2,10 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import SignUp from './SignUp';
 
-const LogIn = () => {
+const LogIn = (props) => {
   return (
     <LogInStyled>
       <h1>Login</h1>
+      <img src={props.src}></img>
       <p>ID </p>
       <input type="text" />
       <p>PW </p>
@@ -24,4 +25,7 @@ const LogInStyled = styled.div`
   width: 50%;
   height: 50%;
   flex-direction: column;
+  img {
+    width: 50%;
+  }
 `;
