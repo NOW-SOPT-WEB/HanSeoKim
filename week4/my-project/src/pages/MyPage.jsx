@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-
-const myPage = () => {
+import { Link } from 'react-router-dom';
+const MyPage = () => {
   return (
     <myPageStyled>
       <p>ID</p>
@@ -17,11 +17,13 @@ const myPage = () => {
         <input type="text" />
         <button>비밀번호 변경</button>
       </div>
-      <button>홈으로</button>
+      <Link to="/">
+        <button>홈으로</button>
+      </Link>
     </myPageStyled>
   );
 };
 
-export default myPage;
+export default MyPage;
 
 const myPageStyled = styled.div``;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import SignUp from './SignUp';
+import { Link } from 'react-router-dom';
 
 const LogIn = (props) => {
   return (
@@ -12,7 +13,9 @@ const LogIn = (props) => {
       <p>PW </p>
       <input type="text" />
       <button>로그인</button>
-      <button>회원가입</button>
+      <Link to="/signup">
+        <button>회원가입</button>
+      </Link>
     </LogInStyled>
   );
 };

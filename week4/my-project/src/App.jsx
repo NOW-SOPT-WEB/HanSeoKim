@@ -4,15 +4,20 @@ import image from './assets/main.png';
 import React from 'react';
 // import styled from 'styled-components';
 // import LogIn from './components/LogIn';
-import SignUp from './components/SignUp';
-import Main from './components/Main';
+import SignUp from './pages/SignUp';
+import Main from './pages/Main';
 // import Router from './Router';
-import MyPage from './components/MyPage';
+import Router from './Router';
+import MyPage from './pages/MyPage';
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return <></>;
+  return (
+    <>
+      <Router></Router>
+    </>
+  );
 }
 
 export default App;
