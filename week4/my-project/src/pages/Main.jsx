@@ -6,10 +6,10 @@ const Main = (props) => {
   return (
     <MainStyled>
       <img src={props.src}></img>
-      <Link to="/mypage">
+      <Link to="/info">
         <button>My Page</button>
       </Link>
-      <Link to="/signup">
+      <Link to="/join">
         <button>회원가입</button>
       </Link>
     </MainStyled>
