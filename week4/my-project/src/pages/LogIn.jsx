@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import SignUp from './SignUp';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useEffect } from 'react';
 
 const base_URL = 'http://34.64.233.12:8080';
 
@@ -20,7 +18,7 @@ const LogIn = (props) => {
       });
       const memberId = response.headers.location;
       alert(response.data.message);
-      navigate(`/mypage/${memberId}`);
+      navigate(`/main/${memberId}`);
     } catch (e) {
       alert(e.response.data.message);
     }

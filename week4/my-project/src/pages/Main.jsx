@@ -1,14 +1,13 @@
 import styled from 'styled-components';
-// import LogIn from './components/LogIn';
-// import SignUp from './components/SignUp';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+
 const Main = (props) => {
+  const navigate = useNavigate();
+  const { memberId } = useParams();
   return (
     <MainStyled>
       <img src={props.src}></img>
-      <Link to="/info">
-        <button>My Page</button>
-      </Link>
+      <button onClick={() => navigate(`/mypage/${memberId}`)}>My Page</button>
       <Link to="/join">
         <button>회원가입</button>
       </Link>
@@ -24,5 +23,8 @@ const MainStyled = styled.div`
   img {
     width: 20rem;
     height: 30rem;
+  }
+  button {
+    width: 5rem;
   }
 `;

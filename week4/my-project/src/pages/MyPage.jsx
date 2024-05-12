@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const MyPage = () => {
     const userData = async () => {
       try {
         const response = await axios.get(`${base_URL}/member/info`, {
-          headers: { memberId },
+          headers: { memberId: memberId },
         });
         setUser(response.data);
         console.log(response.data);
@@ -34,11 +34,11 @@ const MyPage = () => {
   }, [memberId]);
 
   const handleSubmit = async () => {
+    if (!nowPw || !newPw || !confirmPw) {
+      alert('빈 칸 입력해주세요!');
+      return;
+    }
     try {
-      if (!nowPw || !newPw || !confirmPw) {
-        alert('빈 칸 입력해주세요!');
-        return;
-      }
       const pwData = await axios.patch(
         `${base_URL}/member/password`,
         {
@@ -76,9 +76,7 @@ const MyPage = () => {
         </div>
       </ToggleWrapper>
 
-      <Link to="/">
-        <button>홈으로</button>
-      </Link>
+      <button onClick={() => navigate(`/main/${memberId}`)}>홈으로</button>
     </MyPageStyled>
   );
 };
