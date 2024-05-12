@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,198 +16,55 @@
     <div class="header_menu">
         <div class="header_top">
             <header>
-                <i class="fa-brands fa-github"></i>
+                <p id="main_logo" class="home_logo">🌱</p>
                 <h1>한서의 쇼핑몰</h1>
-                <i class="fa-solid fa-bars"></i>
+                <p class="sideMenu_btn" >≡</p>
             </header>
+            <nav class="side_bar hidden">
+                <ul>
+                    <li class="side_select"><button class="back_btn">➜</button></li>
+                    <li class="side_select">관심 상품 목록</li>
+                    <li class="side_select">관리자 페이지</li>
+                    <li class="side_select" id="cart">장바구니</li>
+                </ul>
+            </nav>
             <div class="slider">
-                <div class="image-box">
-                    <img src="/shoppingList/assests/outer1.jpg" alt="블루조끼">
-                    <img src="/shoppingList/assests/outer2.jpg" alt="블랙조끼">
-                    <img src="/shoppingList/assests/outer3.jpg" alt="퍼플조끼">
-                    <img src="/shoppingList/assests/pants1.jpg" alt="스키니진">
-                    <img src="/shoppingList/assests/pants2.jpg" alt="무늬바지">
-                    <img src="/shoppingList/assests/pants3.jpg" alt="조거팬츠">
-                    <img src="/shoppingList/assests/pants4.jpg" alt="아이보리 면바지">
-                    <img src="/shoppingList/assests/top1.jpg" alt="흰색 반팔티">
-                    <img src="/shoppingList/assests/top2.jpg" alt="빨간색 반팔티">
-                    <img src="/shoppingList/assests/top3.jpg" alt="노랑색 반팔티">
-                    <img src="/shoppingList/assests/outer1.jpg" alt="블루조끼">
-                    <img src="/shoppingList/assests/outer2.jpg" alt="블랙조끼">
-                    <img src="/shoppingList/assests/outer3.jpg" alt="퍼플조끼">
-                    <img src="/shoppingList/assests/pants1.jpg" alt="스키니진">
-                    <img src="/shoppingList/assests/pants2.jpg" alt="무늬바지">
-                    <img src="/shoppingList/assests/pants3.jpg" alt="조거팬츠">
-                    <img src="/shoppingList/assests/pants4.jpg" alt="아이보리 면바지">
-                    <img src="/shoppingList/assests/top1.jpg" alt="흰색 반팔티">
-                    <img src="/shoppingList/assests/top2.jpg" alt="빨간색 반팔티">
-                    <img src="/shoppingList/assests/top3.jpg" alt="노랑색 반팔티">
-                </div>
-        
             </div>
         </div>
         
         <nav class="nav_1">
             <ul>
-                <li class="nav_select"><a href="#all">ALL</a></li>
-                <li class="nav_select"><a href="#top_section">TOP</a></li>
-                <li class="nav_select"><a href="#pants_wrapper">PANTS</a></li>
-                <li class="nav_select"><a href="#outer_wrapper">OUTER</a></li>
+                <li class="nav_select" id="n1">ALL</li>
+                <li class="nav_select" id="n2">TOP</li>
+                <li class="nav_select" id="n3">PANTS</li>
+                <li class="nav_select" id="n4">OUTER</li>
             </ul>
         </nav>
+        
     </div>
     
     <main>
-            
-            <section id = "all" class="sect">
-                <h2 >ALL</h2>
-                <section class="all_items wrapper">
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer1.jpg" alt="블루조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>블루조끼</p>
-                        <p>30000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer2.jpg" alt="블랙조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>블랙조끼</p>
-                        <p>30000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer3.jpg" alt="퍼플조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>퍼플조끼</p>
-                        <p>30000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants1.jpg" alt="스키니진">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>스키니진</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants2.jpg" alt="무늬바지">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>무늬바지</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants3.jpg" alt="조거팬츠">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>조거팬츠</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants4.jpg" alt="아이보리 면바지">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>아이보리 면바지</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/top1.jpg" alt="흰색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>흰 반팔 티</p>
-                        <p>10000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/top2.jpg" alt="빨간색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>빨강 반팔 티</p>
-                        <p>10000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/top3.jpg" alt="노랑색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>노란 반팔 티</p>
-                        <p>10000원</p>
-                    </article>  
-                </section> 
-            </section>
-            
-            <section id="top_section" class="sect">
-                <h2>TOP</h2>
-                <section class="top_items wrapper">
-                    <article class="items">
-                        <img src="/shoppingList/assests/top1.jpg" alt="흰색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>흰 반팔 티</p>
-                        <p>10000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/top2.jpg" alt="빨간색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>빨강 반팔 티</p>
-                        <p>10000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/top3.jpg" alt="노랑색 반팔티">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>노란 반팔 티</p>
-                        <p>10000원</p>
-                    </article> 
-                </section>    
-            </section>
-            
+        <div class="all_items">
+            <section id = "all_wrapper" class="sect">
+            </section>          
+            <section id="top_wrapper" class="sect">
+            </section>          
             <section id="pants_wrapper" class="sect">
-                <h2 >PANTS</h2>
-                <section class="pants_items wrapper">
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants1.jpg" alt="스키니진">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>스키니진</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants2.jpg" alt="무늬바지">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>무늬바지</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants3.jpg" alt="조거팬츠">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>조거팬츠</p>
-                        <p>40000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/pants4.jpg" alt="아이보리 면바지">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>아이보리 면바지</p>
-                        <p>40000원</p>
-                    </article>
-                </section>
-            </section>
-            
+            </section>     
             <section id = "outer_wrapper" class="sect">
-                <h2>OUTER</h2>
-                <section class="outer_items wrapper" >
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer1.jpg" alt="블루조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>블루조끼</p>
-                        <p>30000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer2.jpg" alt="블랙조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>블랙조끼</p>
-                        <p>30000원</p>
-                    </article>
-                    <article class="items">
-                        <img src="/shoppingList/assests/outer3.jpg" alt="퍼플조끼">
-                        <p><i class="fa-solid fa-heart"></i></p>
-                        <p>퍼플조끼</p>
-                        <p>30000원</p>
-                    </article>
-                </section>
             </section>
+        </div>   
+            
     </main>
         
     <footer>
             <p>새싹 웹 파이팅!!!!!</p>
     </footer>
-    
+
 </body>
 <script src="https://use.fontawesome.com/releases/v6.5.1/js/all.js"></script>
+<script type="module" src="/shoppingList/js/index.js"></script>
+<script type="module" src="/shoppingList/js/shoppingList.js" ></script>
+<script type="module" src="/shoppingList/js/filter.js"></script>
+<script type="module" src="/shoppingList/js/cart.js"></script>
 </html>

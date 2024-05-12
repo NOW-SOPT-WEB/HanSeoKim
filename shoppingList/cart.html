@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/shoppingList/css/reset.css">
+    <link rel="stylesheet" href="/shoppingList/css/cart.css">
+</head>
+<body>
+    <header>
+        <p id="main_logo" class="home_logo">🌱</p>
+        <h1>한서의 쇼핑몰</h1>
+        <p class="sideMenu_btn" >≡</p>
+    </header>
+    <section class="order_list">
+        <ul class="list_title">
+            <li><input class = "check" type="checkbox" value="" id="select-all"></li>
+            <li><p class="info">상품정보</p></li>
+            <li><p class="info">상품 금액</p></li>
+            <li><p class="info">카테고리</p></li>
+            <li><p class="info">비고</p></li>
+        </ul>
+        <div class="ol_container">
+        </div>
+        <div class="modal hidden">
+            <button class="back_btn">X</button>
+            <ul class="modal_items"></ul>
+            <button class="buy">구매 확정</button>
+        </div>
+        <div class="buttons">
+            <button class="goHome">홈으로</button>
+            <button class="purchase_btn" type="button">구매</button>
+        </div>
+        
+    </section>
+
+    <footer>
+        <p>새싹 웹 파이팅!!!!!</p>
+    </footer>
+
+
+</body>
+<script type="module" src="/shoppingList/js/index.js"></script>
+<script type="module" src="/shoppingList/js/shoppingList.js" ></script>
+<script type="module" src="/shoppingList/js/filter.js"></script>
+<script type="module" src="/shoppingList/js/cart.js"></script>
+</html>
