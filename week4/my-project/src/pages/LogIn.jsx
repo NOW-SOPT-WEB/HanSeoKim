@@ -5,12 +5,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useEffect } from 'react';
 
-import { useParams } from 'react-router-dom';
-
 const base_URL = 'http://34.64.233.12:8080';
 
 const LogIn = (props) => {
-  const { id } = useParams();
   const [userId, setUserId] = useState('');
   const [userPw, setUserPw] = useState('');
 
@@ -23,7 +20,7 @@ const LogIn = (props) => {
       });
       const memberId = response.headers.location;
       alert(response.data.message);
-      navigate('/');
+      navigate(`/mypage/${memberId}`);
     } catch (e) {
       alert(e.response.data.message);
     }
