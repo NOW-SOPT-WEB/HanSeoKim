@@ -2,19 +2,22 @@
 import React from "react";
 import { css } from "@emotion/react";
 import { ContentsBoxStyle, BoxWrapperStyle } from "./ContentsBox.style";
+import { Children } from "react";
 
-const BoxWrapper = () => {
+const BoxWrapper = ({ children }) => {
   return (
     <>
-      <div css={BoxWrapperStyle}></div>
+      <div css={BoxWrapperStyle}>{children}</div>
     </>
   );
 };
 
-const ContentsBox = () => {
+const ContentsBox = ({ onClick, children }) => {
   return (
     <>
-      <div css={ContentsBoxStyle}></div>
+      <div onClick={onClick} css={ContentsBoxStyle}>
+        {children}
+      </div>
     </>
   );
 };

@@ -4,14 +4,18 @@ import { btnStyle } from "./components/@common/Button/Button.style";
 import { BoxWrapper } from "./components/@common/ContentsBox/ContentsBox";
 import NextBtn from "./components/@common/Button/Button";
 import { mainStyle } from "./MainLayout.style";
+import { ContentsText } from "./components/@common/ContentsBox/ContentsBox.style";
+import { ContentsBox } from "./components/@common/ContentsBox/ContentsBox";
+import { alignBoxes } from "./components/@common/ContentsBox/ContentsBox.style";
+import InnerLayout from "./InnerLayout";
 
 const MainLayout = () => {
   return (
     <div css={mainStyle}>
       <Header></Header>
-      <NextBtn css={btnStyle}>처음으로</NextBtn>
-
-      <BoxWrapper></BoxWrapper>
+      <BoxWrapper>
+        <InnerLayout></InnerLayout>
+      </BoxWrapper>
     </div>
   );
 };
