@@ -6,7 +6,7 @@ import { Children } from "react";
 import { ContentsText } from "./components/@common/ContentsBox/ContentsBox.style";
 import { alignBoxes } from "./components/@common/ContentsBox/ContentsBox.style";
 import { ContentsBox } from "./components/@common/ContentsBox/ContentsBox";
-import { MENUS } from "./constants/CATEGORY";
+import { MENUS } from "./data/CATEGORY";
 import NextBtn from "./components/@common/Button/Button";
 
 const InnerLayout = () => {
@@ -34,9 +34,6 @@ const InnerLayout = () => {
     );
   };
 
-  useEffect(() => {
-    console.log("뭔데: ", isSelect);
-  }, [isSelect]);
   return (
     <>
       {!isSelect ? (
