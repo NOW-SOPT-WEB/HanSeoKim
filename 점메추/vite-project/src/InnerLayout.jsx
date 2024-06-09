@@ -8,51 +8,26 @@ import { alignBoxes } from "./components/@common/ContentsBox/ContentsBox.style";
 import { ContentsBox } from "./components/@common/ContentsBox/ContentsBox";
 import { MENUS } from "./data/CATEGORY";
 import NextBtn from "./components/@common/Button/Button";
+import { FirstStep } from "./components/step/firstStep";
+import { Result } from "./components/step/Result";
 
-const InnerLayout = () => {
-  const [isSelect, setIsSelect] = useState("");
-
-  const Taste = () => {
-    return (
-      <>
-        <ContentsBox>
-          <p>취향대로 추천!</p>
-        </ContentsBox>
-        <NextBtn>Start!</NextBtn>
-      </>
-    );
-  };
-
-  const Random = () => {
-    return (
-      <>
-        <ContentsBox>
-          <p>랜덤 추천!</p>
-        </ContentsBox>
-        <NextBtn>Start!</NextBtn>
-      </>
-    );
-  };
-
-  return (
-    <>
-      {!isSelect ? (
+const InnerLayout = ({ step, setStep }) => {
+  console.log("스텝: ", step);
+  switch (step) {
+    case 0:
+      return (
         <>
-          <p css={ContentsText}>원하는 추천 방식을 골라줘!</p>
-          <div css={alignBoxes}>
-            <ContentsBox onClick={() => setIsSelect(MENUS[0].category)}>
-              <p>취향대로 추천!</p>
-            </ContentsBox>
-            <ContentsBox onClick={() => setIsSelect(MENUS[1].category)}>
-              <p>랜덤 추천!</p>
-            </ContentsBox>
-          </div>
+          <FirstStep setStep={setStep}></FirstStep>
         </>
-      ) : null}
-      {isSelect === MENUS[0].category && <Taste />}
-      {isSelect === MENUS[1].category && <Random />}
-    </>
-  );
+      );
+
+    case 4:
+      return (
+        <>
+          <Result setStep={setStep}></Result>
+        </>
+      );
+  }
 };
 
 export default InnerLayout;

@@ -8,13 +8,16 @@ import { ContentsText } from "./components/@common/ContentsBox/ContentsBox.style
 import { ContentsBox } from "./components/@common/ContentsBox/ContentsBox";
 import { alignBoxes } from "./components/@common/ContentsBox/ContentsBox.style";
 import InnerLayout from "./InnerLayout";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const MainLayout = () => {
+  const [step, setStep] = useState(0);
   return (
     <div css={mainStyle}>
       <Header></Header>
       <BoxWrapper>
-        <InnerLayout></InnerLayout>
+        <InnerLayout step={step} setStep={setStep}></InnerLayout>
       </BoxWrapper>
     </div>
   );
