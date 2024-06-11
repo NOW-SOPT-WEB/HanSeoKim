@@ -4,9 +4,13 @@ import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
 import { ThirdStep } from "./ThirdStep";
 
-export const SecondStep = ({ innerText, setStep, onClick }) => {
-  const [secondMenu, setSecond] = useState("");
-
+export const SecondStep = ({
+  innerText,
+  setStep,
+  onClick,
+  setSecond,
+  secondMenu,
+}) => {
   return (
     <>
       {SECOND_MENU.map((title, index) => {

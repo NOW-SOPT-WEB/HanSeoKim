@@ -1,18 +1,16 @@
 import { SPICY, EXPEN } from "../../data/CATEGORY";
 import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
-import { useState } from "react";
 
 export const FourthStep = ({
   setStep,
   onClick,
   secondMenu,
   innerText,
-  thirdSelect,
+  fourthSelect,
+  setFourth,
 }) => {
-  const [fourthSelect, setFourth] = useState("");
   console.log("44secondMennuu: ", secondMenu);
-  console.log("4step", step);
   const Spicy = () => {
     return (
       <>

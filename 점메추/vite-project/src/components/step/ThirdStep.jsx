@@ -1,10 +1,15 @@
-import { useState } from "react";
 import { KOR_CATEGORY, JAP_CATEGORY, WEST_CATEGORY } from "../../data/CATEGORY";
 import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
 
-export const ThirdStep = ({ setStep, onClick, innerText, secondMenu }) => {
-  const [thirdSelect, setThird] = useState("");
+export const ThirdStep = ({
+  setStep,
+  onClick,
+  innerText,
+  secondMenu,
+  thirdSelect,
+  setThird,
+}) => {
   const Kor = () => {
     return (
       <>

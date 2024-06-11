@@ -5,9 +5,13 @@ import { useState } from "react";
 import { ContentsText } from "../@common/ContentsBox/ContentsBox.style";
 import { alignBoxes } from "../@common/ContentsBox/ContentsBox.style";
 
-export const FirstStep = ({ innerText, onClick, setStep }) => {
-  const [selectedMethod, setSelectedMethod] = useState("");
-
+export const FirstStep = ({
+  innerText,
+  onClick,
+  setStep,
+  selectedMethod,
+  setSelectedMethod,
+}) => {
   const Taste = () => {
     return (
       <>

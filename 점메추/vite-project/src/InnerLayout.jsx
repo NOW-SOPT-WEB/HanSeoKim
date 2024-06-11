@@ -5,20 +5,39 @@ import { SecondStep } from "./components/step/SecondStep";
 import { ThirdStep } from "./components/step/ThirdStep";
 import { FourthStep } from "./components/step/FourthStep";
 
-const InnerLayout = ({ step, setStep, secondMenu, thirdSelect }) => {
+const InnerLayout = ({
+  step,
+  setStep,
+  selectedMethod,
+  fourthSelect,
+  secondMenu,
+  thirdSelect,
+  setSelectedMethod,
+  setFourth,
+  setSecond,
+  setThird,
+}) => {
   console.log("스텝: ", step);
   switch (step) {
     case 0:
       return (
         <>
-          <FirstStep setStep={setStep}></FirstStep>
+          <FirstStep
+            setStep={setStep}
+            setSelectedMethod={setSelectedMethod}
+            selectedMethod={selectedMethod}
+          ></FirstStep>
         </>
       );
 
     case 1:
       return (
         <>
-          <SecondStep setStep={setStep}></SecondStep>
+          <SecondStep
+            setStep={setStep}
+            setSecond={setSecond}
+            secondMenu={secondMenu}
+          ></SecondStep>
         </>
       );
 
@@ -35,7 +54,8 @@ const InnerLayout = ({ step, setStep, secondMenu, thirdSelect }) => {
           <FourthStep
             setStep={setStep}
             secondMenu={secondMenu}
-            thirdSelect={thirdSelect}
+            fourthSelect={fourthSelect}
+            setFourth={setFourth}
           ></FourthStep>
         </>
       );
