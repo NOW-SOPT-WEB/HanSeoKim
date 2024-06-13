@@ -17,7 +17,6 @@ const InnerLayout = ({
   setSecond,
   setThird,
 }) => {
-  console.log("스텝: ", step);
   switch (step) {
     case 0:
       return (
@@ -44,7 +43,11 @@ const InnerLayout = ({
     case 2:
       return (
         <>
-          <ThirdStep setStep={setStep} secondMenu={secondMenu}></ThirdStep>
+          <ThirdStep
+            setStep={setStep}
+            secondMenu={secondMenu}
+            setThird={setThird}
+          ></ThirdStep>
         </>
       );
 
@@ -63,7 +66,13 @@ const InnerLayout = ({
     case 4:
       return (
         <>
-          <Result setStep={setStep} secondMenu={secondMenu}></Result>
+          <Result
+            setStep={setStep}
+            secondMenu={secondMenu}
+            fourthSelect={fourthSelect}
+            thirdSelect={thirdSelect}
+            selectedMethod={selectedMethod}
+          ></Result>
         </>
       );
   }

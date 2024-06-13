@@ -15,11 +15,9 @@ export const ThirdStep = ({
       <>
         {KOR_CATEGORY.map((item, index) => {
           return (
-            <>
-              <ContentsBox key={index} onClick={() => setThird(item)}>
-                {item}
-              </ContentsBox>
-            </>
+            <ContentsBox key={index} onClick={() => setThird(item)}>
+              {item}
+            </ContentsBox>
           );
         })}
         <NextBtn
@@ -39,12 +37,9 @@ export const ThirdStep = ({
       <>
         {JAP_CATEGORY.map((item, index) => {
           return (
-            <>
-              <ContentsBox key={index} onClick={() => setThird(item)}>
-                {item}
-              </ContentsBox>
-              ;
-            </>
+            <ContentsBox key={index} onClick={() => setThird(item)}>
+              {item}
+            </ContentsBox>
           );
         })}
         <NextBtn
@@ -64,12 +59,9 @@ export const ThirdStep = ({
       <>
         {WEST_CATEGORY.map((item, index) => {
           return (
-            <>
-              <ContentsBox key={index} onClick={() => setThird(item)}>
-                {item}
-              </ContentsBox>
-              ;
-            </>
+            <ContentsBox key={index} onClick={() => setThird(item)}>
+              {item}
+            </ContentsBox>
           );
         })}
         <NextBtn
