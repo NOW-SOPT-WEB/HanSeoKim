@@ -23,6 +23,9 @@ const NextBtn = ({ innerText, setSelectedMenu, selectedMethod, setStep }) => {
         setStep((prev) => prev + 1);
         break;
 
+      case "이전으로":
+        setStep((prev) => prev - 1);
+        break;
       case "다시하기":
         setStep(0);
         break;

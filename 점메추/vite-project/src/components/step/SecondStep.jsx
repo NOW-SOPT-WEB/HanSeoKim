@@ -26,6 +26,9 @@ export const SecondStep = ({
           </ContentsBox>
         );
       })}
+      <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
+        {innerText}
+      </NextBtn>
       <NextBtn
         setStep={setStep}
         onClick={onClick}
