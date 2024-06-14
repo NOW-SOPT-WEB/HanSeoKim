@@ -33,6 +33,7 @@ const InnerLayout = ({
       return (
         <>
           <SecondStep
+            step={step}
             setStep={setStep}
             setSecond={setSecond}
             secondMenu={secondMenu}
@@ -44,6 +45,7 @@ const InnerLayout = ({
       return (
         <>
           <ThirdStep
+            step={step}
             setStep={setStep}
             secondMenu={secondMenu}
             setThird={setThird}
@@ -55,6 +57,7 @@ const InnerLayout = ({
       return (
         <>
           <FourthStep
+            step={step}
             setStep={setStep}
             secondMenu={secondMenu}
             fourthSelect={fourthSelect}
@@ -67,6 +70,7 @@ const InnerLayout = ({
       return (
         <>
           <Result
+            step={step}
             setStep={setStep}
             secondMenu={secondMenu}
             fourthSelect={fourthSelect}

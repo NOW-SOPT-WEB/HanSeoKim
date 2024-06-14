@@ -5,6 +5,7 @@ import NextBtn from "../@common/Button/Button";
 import { ThirdStep } from "./ThirdStep";
 
 export const SecondStep = ({
+  step,
   innerText,
   setStep,
   onClick,
@@ -13,6 +14,7 @@ export const SecondStep = ({
 }) => {
   return (
     <>
+      <p>{step}/3</p>
       {SECOND_MENU.map((title, index) => {
         return (
           <ContentsBox

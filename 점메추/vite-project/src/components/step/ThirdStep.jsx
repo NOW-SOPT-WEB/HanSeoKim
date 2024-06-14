@@ -3,6 +3,7 @@ import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
 
 export const ThirdStep = ({
+  step,
   setStep,
   onClick,
   innerText,
@@ -13,6 +14,7 @@ export const ThirdStep = ({
   const Kor = () => {
     return (
       <>
+        <p>{step}/3</p>
         {KOR_CATEGORY.map((item, index) => {
           return (
             <ContentsBox key={index} onClick={() => setThird(item)}>

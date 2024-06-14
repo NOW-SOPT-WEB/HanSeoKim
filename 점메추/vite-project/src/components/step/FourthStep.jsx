@@ -3,6 +3,7 @@ import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
 
 export const FourthStep = ({
+  step,
   setStep,
   onClick,
   secondMenu,
@@ -14,6 +15,7 @@ export const FourthStep = ({
   const Spicy = () => {
     return (
       <>
+        <p>{step}/3</p>
         {SPICY.map((item, index) => {
           return (
             <>
