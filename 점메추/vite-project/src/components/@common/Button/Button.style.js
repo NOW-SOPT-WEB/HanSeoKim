@@ -10,6 +10,7 @@ const btnStyle = css({
   backgroundColor: "#FAC1B5",
   color: "white",
   fontSize: "18px",
+  margin: "0.5rem",
 });
 
 export { btnStyle };

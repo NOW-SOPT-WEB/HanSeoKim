@@ -1,6 +1,7 @@
 import { KOR_CATEGORY, JAP_CATEGORY, WEST_CATEGORY } from "../../data/CATEGORY";
 import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
+import { ContentsWrapper } from "../@common/ContentsBox/ContentsBox.style";
 
 export const ThirdStep = ({
   step,
@@ -15,13 +16,16 @@ export const ThirdStep = ({
     return (
       <>
         <p>{step}/3</p>
-        {KOR_CATEGORY.map((item, index) => {
-          return (
-            <ContentsBox key={index} onClick={() => setThird(item)}>
-              {item}
-            </ContentsBox>
-          );
-        })}
+        <ContentsWrapper>
+          {KOR_CATEGORY.map((item, index) => {
+            return (
+              <ContentsBox key={index} onClick={() => setThird(item)}>
+                {item}
+              </ContentsBox>
+            );
+          })}
+        </ContentsWrapper>
+
         <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
           {innerText}
         </NextBtn>
@@ -40,13 +44,16 @@ export const ThirdStep = ({
   const Jap = () => {
     return (
       <>
-        {JAP_CATEGORY.map((item, index) => {
-          return (
-            <ContentsBox key={index} onClick={() => setThird(item)}>
-              {item}
-            </ContentsBox>
-          );
-        })}
+        <ContentsWrapper>
+          {JAP_CATEGORY.map((item, index) => {
+            return (
+              <ContentsBox key={index} onClick={() => setThird(item)}>
+                {item}
+              </ContentsBox>
+            );
+          })}
+        </ContentsWrapper>
+
         <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
           {innerText}
         </NextBtn>
@@ -65,13 +72,16 @@ export const ThirdStep = ({
   const West = () => {
     return (
       <>
-        {WEST_CATEGORY.map((item, index) => {
-          return (
-            <ContentsBox key={index} onClick={() => setThird(item)}>
-              {item}
-            </ContentsBox>
-          );
-        })}
+        <ContentsWrapper>
+          {WEST_CATEGORY.map((item, index) => {
+            return (
+              <ContentsBox key={index} onClick={() => setThird(item)}>
+                {item}
+              </ContentsBox>
+            );
+          })}
+        </ContentsWrapper>
+
         <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
           {innerText}
         </NextBtn>

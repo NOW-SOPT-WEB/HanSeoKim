@@ -4,6 +4,7 @@ import NextBtn from "../@common/Button/Button";
 import { useState } from "react";
 import { ContentsText } from "../@common/ContentsBox/ContentsBox.style";
 import { alignBoxes } from "../@common/ContentsBox/ContentsBox.style";
+import { ContentsWrapper } from "../@common/ContentsBox/ContentsBox.style";
 
 export const FirstStep = ({
   innerText,
@@ -53,14 +54,14 @@ export const FirstStep = ({
       {!selectedMethod ? (
         <>
           <p css={ContentsText}>원하는 추천 방식을 골라줘!</p>
-          <div css={alignBoxes}>
+          <ContentsWrapper>
             <ContentsBox onClick={() => setSelectedMethod(MENUS[0].category)}>
               <p>취향대로 추천!</p>
             </ContentsBox>
             <ContentsBox onClick={() => setSelectedMethod(MENUS[1].category)}>
               <p>랜덤 추천!</p>
             </ContentsBox>
-          </div>
+          </ContentsWrapper>
         </>
       ) : selectedMethod === "taste" ? (
         <Taste />

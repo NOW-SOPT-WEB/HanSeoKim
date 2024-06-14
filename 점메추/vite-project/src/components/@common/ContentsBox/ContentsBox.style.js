@@ -1,23 +1,36 @@
+/** @jsxImportSource @emotion/react */
+import styled from "@emotion/styled";
 import React from "react";
 import { css } from "@emotion/react";
 
 const BoxWrapperStyle = css({
+  display: "flex",
+  justifyContent: "center",
+  flexDirection: "column",
   marginTop: "5rem",
   backgroundColor: "#F9E8ED",
-  height: "30rem",
-  width: "60rem",
+  height: "28rem",
+  width: "52rem",
   borderRadius: "5%",
 });
 
-const ContentsBoxStyle = css`
+const ContentsWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: row;
+`;
+
+const ContentsBoxStyle = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
   height: 15rem;
   width: 20rem;
   margin-right: 2rem;
   border-radius: 5%;
   border: 1px solid gray;
-  background-color: #f9f2f9;
+  background-color: ${(props) => (props.isClicked ? "#fabac4" : "#f9f2f9")};
+  color: ${(props) => (props.isClicked ? "white" : "black")};
   cursor: pointer;
 
   &:hover {
@@ -25,6 +38,7 @@ const ContentsBoxStyle = css`
     color: white;
   }
 `;
+
 const ContentsText = css({
   display: "flex",
   justifyContent: "center",
@@ -40,4 +54,10 @@ const alignBoxes = css({
   justifyContent: "center",
 });
 
-export { BoxWrapperStyle, ContentsBoxStyle, ContentsText, alignBoxes };
+export {
+  BoxWrapperStyle,
+  ContentsBoxStyle,
+  ContentsText,
+  ContentsWrapper,
+  alignBoxes,
+};

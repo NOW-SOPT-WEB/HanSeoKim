@@ -1,6 +1,7 @@
 import { SPICY, EXPEN } from "../../data/CATEGORY";
 import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
 import NextBtn from "../@common/Button/Button";
+import { ContentsWrapper } from "../@common/ContentsBox/ContentsBox.style";
 
 export const FourthStep = ({
   step,
@@ -11,20 +12,27 @@ export const FourthStep = ({
   fourthSelect,
   setFourth,
 }) => {
-  console.log("44secondMennuu: ", secondMenu);
   const Spicy = () => {
     return (
       <>
         <p>{step}/3</p>
-        {SPICY.map((item, index) => {
-          return (
-            <>
-              <ContentsBox key={index} onClick={() => setFourth(item)}>
-                {item}
-              </ContentsBox>
-            </>
-          );
-        })}
+        <ContentsWrapper>
+          {SPICY.map((item, index) => {
+            return (
+              <>
+                <ContentsBox
+                  key={index}
+                  onClick={() => {
+                    setFourth(item);
+                  }}
+                >
+                  {item}
+                </ContentsBox>
+              </>
+            );
+          })}
+        </ContentsWrapper>
+
         <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
           {innerText}
         </NextBtn>
@@ -43,15 +51,22 @@ export const FourthStep = ({
   const Ex = () => {
     return (
       <>
-        {EXPEN.map((item, index) => {
-          return (
-            <>
-              <ContentsBox key={index} onClick={() => setFourth(item)}>
-                {item}
-              </ContentsBox>
-            </>
-          );
-        })}
+        <ContentsWrapper>
+          {EXPEN.map((item, index) => {
+            return (
+              <>
+                <ContentsBox
+                  key={index}
+                  onClick={() => {
+                    setFourth(item);
+                  }}
+                >
+                  {item}
+                </ContentsBox>
+              </>
+            );
+          })}
+        </ContentsWrapper>
 
         <NextBtn innerText={"이전으로"} onClick={onClick} setStep={setStep}>
           {innerText}
@@ -68,22 +83,6 @@ export const FourthStep = ({
     );
   };
 
-  if (secondMenu === "양식")
-    return (
-      <Ex
-        setStep={setStep}
-        secondMenu={secondMenu}
-        fourthSelect={fourthSelect}
-        setFourth={setFourth}
-      />
-    );
-  else
-    return (
-      <Spicy
-        setStep={setStep}
-        secondMenu={secondMenu}
-        fourthSelect={fourthSelect}
-        setFourth={setFourth}
-      />
-    );
+  if (secondMenu === "양식") return <Ex />;
+  else return <Spicy />;
 };

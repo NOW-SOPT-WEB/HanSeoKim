@@ -1,7 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
+import React, { useState } from "react";
 import { css } from "@emotion/react";
-import { ContentsBoxStyle, BoxWrapperStyle } from "./ContentsBox.style";
+import {
+  ContentsBoxStyle,
+  BoxWrapperStyle,
+  ContentsWrapper,
+} from "./ContentsBox.style";
 import { Children } from "react";
 
 const BoxWrapper = ({ children }) => {
@@ -13,13 +17,7 @@ const BoxWrapper = ({ children }) => {
 };
 
 const ContentsBox = ({ onClick, children }) => {
-  return (
-    <>
-      <div onClick={onClick} css={ContentsBoxStyle}>
-        {children}
-      </div>
-    </>
-  );
+  return <ContentsBoxStyle onClick={onClick}>{children}</ContentsBoxStyle>;
 };
 
 export { BoxWrapper, ContentsBox };
