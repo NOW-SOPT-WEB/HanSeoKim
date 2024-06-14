@@ -60,6 +60,22 @@ export const FourthStep = ({
     );
   };
 
-  if (secondMenu === "양식") return <Ex />;
-  else return <Spicy />;
+  if (secondMenu === "양식")
+    return (
+      <Ex
+        setStep={setStep}
+        secondMenu={secondMenu}
+        fourthSelect={fourthSelect}
+        setFourth={setFourth}
+      />
+    );
+  else
+    return (
+      <Spicy
+        setStep={setStep}
+        secondMenu={secondMenu}
+        fourthSelect={fourthSelect}
+        setFourth={setFourth}
+      />
+    );
 };
