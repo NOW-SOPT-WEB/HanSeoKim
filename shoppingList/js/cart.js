@@ -39,7 +39,7 @@ function addToCart(itemName, itemPrice, itemCategory, imgSrc) {
   let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   cartItems.push(newItem);
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
-
+  loadCart();
   return newItem;
 }
 
@@ -95,6 +95,7 @@ function pushCart() {
       }
     })
   );
+  loadCart();
 }
 
 //modal화면 load
@@ -159,6 +160,7 @@ homeBtn.addEventListener("click", goHome);
 document.addEventListener("DOMContentLoaded", function () {
   loadCart();
   const cartList = document.querySelector(".ol_container");
+  console.log("cartList : ", cartList);
 
   // 삭제 버튼에 클릭 이벤트를 추가
   cartList.addEventListener("click", function (event) {
