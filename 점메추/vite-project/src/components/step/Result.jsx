@@ -2,6 +2,7 @@ import { useState } from "react";
 import { MENUS, SELECTIONS } from "../../data/CATEGORY";
 import CountDown from "./Countdown";
 import { ContentsBox } from "../@common/ContentsBox/ContentsBox";
+import NextBtn from "../@common/Button/Button";
 
 export const Result = ({
   setStep,
@@ -9,6 +10,7 @@ export const Result = ({
   secondMenu,
   thirdSelect,
   fourthSelect,
+  onClick,
 }) => {
   console.log();
   const [count, setCount] = useState(3);
@@ -51,10 +53,17 @@ export const Result = ({
       {count > 0 && selectedMethod === "random" ? (
         <CountDown count={count} setCount={setCount}></CountDown>
       ) : (
-        <ContentsBox>
-          {imgUrl && <img src={imgUrl} />}
-          {imgName && <h3>{imgName}</h3>}
-        </ContentsBox>
+        <>
+          <ContentsBox>
+            {imgUrl && <img src={imgUrl} />}
+            {imgName && <h3>{imgName}</h3>}
+          </ContentsBox>
+          <NextBtn
+            setStep={setStep}
+            onClick={onClick}
+            innerText={"다시하기"}
+          ></NextBtn>
+        </>
       )}
     </>
   );
